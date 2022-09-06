@@ -42,7 +42,7 @@ sub run {
     }
     else {
       for my $work (@{$threads[$j]}) {
-        eval { $self->handler()->($work) } or die "Can't handle $work \n";
+        eval { $self->handler()->($work) } or die "Can't handle $work: $@\n";
         sleep 0.5;
       }
       exit;
