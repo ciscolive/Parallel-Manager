@@ -76,20 +76,20 @@ Parallel::Manager
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
   use 5.018;
   use Parallel::Manager;
 
-  sub say_hello {
+  sub callback {
     my $name = shift;
-    say qq{hello $name #times};
+    say qq{callback $name #times};
   }
 
-  my $p = Parallel::Manager->new(handler => \&say_hello, workers => [1 .. 100]);
-  # will say 100 times
+  my $p = Parallel::Manager->new(handler => \&callback, workers => [1 .. 100]);
+  # will callback 100 times async
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
@@ -98,7 +98,7 @@ version 0.01
 =head2 Bugs / Feature Requests
 
 Please report any bugs or feature requests through the issue tracker
-at L<https://github.com/ciscolive/parallel_manager/issues>.
+at L<https://github.com/ciscolive/Parallel-Manager/issues>.
 You will be notified automatically of any progress on your issue.
 
 =head2 Source Code
@@ -106,9 +106,9 @@ You will be notified automatically of any progress on your issue.
 This is open source software.  The code repository is available for
 public review and contribution under the terms of the license.
 
-L<https://github.com/ciscolive/parallel_manager>
+L<https://github.com/ciscolive/Parallel-Manager>
 
-  git clone git://github.com/ciscolive/parallel_manager.git
+  git clone git://github.com/ciscolive/Parallel-Manager.git
 
 =head1 AUTHOR
 
